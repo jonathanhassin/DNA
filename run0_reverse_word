@@ -1,0 +1,3 @@
+vlogan -kdb -sverilog -full64 reverse_word_test.sv reverse_word.sv
+vcs -kdb -debug_access+all -full64 reverse_word_test
+./simv -gui

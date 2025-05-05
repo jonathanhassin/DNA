@@ -1,0 +1,3 @@
+vlogan -kdb -sverilog -full64 word_sum_test.sv word_sum.sv
+vcs -kdb -debug_access+all -full64 word_sum_test
+./simv -gui

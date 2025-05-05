@@ -1,0 +1,3 @@
+vlogan -kdb -sverilog -full64 rll_restore_test.sv ../rll_restore.sv
+vcs -kdb -debug_access+all -full64 rll_restore_test
+./simv -gui

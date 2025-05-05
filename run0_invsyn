@@ -1,0 +1,3 @@
+vlogan -kdb -sverilog -full64 invsyn_test.sv invsyn.sv
+vcs -kdb -debug_access+all -full64 invsyn_test
+./simv -gui

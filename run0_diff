@@ -1,0 +1,5 @@
+#vlogan -kdb -sverilog -full64 differential_test.sv differential.sv
+vlogan -kdb -sverilog -full64 differential.sv
+vlogan -kdb -sverilog -full64 differential_test.sv 
+vcs -kdb -debug_access+all -full64 differential_test
+./simv -gui
