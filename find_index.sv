@@ -5,7 +5,6 @@ module find_index #(
     input [2*N-1:0] word_in,
     input [8:0] word_sum,
 	input [13:0] inv_syn,
-    //input [2*N-1:0] diff_word
 	output logic [6:0] missing_index,
 	output logic [1:0] missing_digit
 );
