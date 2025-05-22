@@ -10,18 +10,15 @@ module word_sum #(
     integer i;
 	
 	always_ff @(posedge clk or posedge rst) begin
-		if (rst) begin 
-			sum_out=0;
-		end
-		else begin 
-			sum_out=sum;
-		end
+		if (rst) sum_out=0;
+		else sum_out=sum;
 	end
 
     always_comb begin 
-        sum = word_in[1:0];  // Start with the first digit
-        for (i = 1; i < N; i = i + 1) begin
-            sum = sum + word_in[2*i +: 2];  // Accumulate sum
+        sum = 0;
+        for (i = 0; i < N; i++) begin
+            if (!word_in[2*i +: 2]) sum=sum+4;
+			else sum = sum + word_in[2*i +: 2];
         end
     end
 

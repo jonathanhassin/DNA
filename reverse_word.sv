@@ -11,13 +11,11 @@ module reverse_word #(
 	logic [2*N-1:0] word;
     integer i;
     
-	always_ff
-		if (rst) begin 
+	always_ff @(posedge clk or posedge rst) begin
+		if (rst) 
 			word_out=0;
-		end 
-		else begin 
+		else
 			word_out=word;
-		end
 	end
 	
 	always_comb begin

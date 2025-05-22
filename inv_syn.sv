@@ -21,11 +21,11 @@ module inv_syn #(
     always_comb begin 
         sum = 0;  // Initialize sum to zero
         for (i = 0; i < N; i = i + 1) begin
-			if (word_in[2*i+1 : 2*i]==2'b00) begin
+			if (word_in[2*i +: 2]==2'b00) begin
 				sum = sum + (4 * (i+1));  // Weighted sum calculation
 			end
 			else begin
-				sum = sum + (word_in[2*i+1 : 2*i] * (i+1));  // Weighted sum calculation
+				sum = sum + (word_in[2*i +: 2] * (i+1));  // Weighted sum calculation
 			end 
 		
         end

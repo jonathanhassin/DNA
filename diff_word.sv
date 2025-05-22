@@ -1,5 +1,5 @@
 module diff_word #(
-    parameter N = 8  // Number of digits in the word
+    parameter N = 100  // Number of digits in the word
 )(
 	input clk,
 	input rst,
