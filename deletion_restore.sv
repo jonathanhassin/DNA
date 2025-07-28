@@ -1,6 +1,6 @@
 
 module deletion_restore #(
-    parameter N = 18,
+    parameter N = 98,
 	parameter A = 30,	// constant "a" according the article
 	parameter B = 27	// constant "b" according the article
 )(

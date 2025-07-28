@@ -6,7 +6,7 @@ module diff_word #(
     input  [2*N-1:0] word_in,  // Input word (N digits, 2 bits each)
     output logic [2*N-1:0] word_out  // Output differential word (N digits, 2 bits each)
 );
-	logic [2*N-1:0] word;
+	logic [2*N-1:0] word_tmp;
     integer i;
 	
 	always_ff @(posedge clk or posedge rst) begin
@@ -14,14 +14,14 @@ module diff_word #(
 			word_out=0;
 		end
 		else begin 
-			word_out=word;
+			word_out=word_tmp;
 		end
 	end
 
     always_comb begin 
-        word[2*N-1 -: 2] = word_in[2*N-1 -: 2];  // leftmost digit remains the same
+        word_tmp[2*N-1 -: 2] = word_in[2*N-1 -: 2];  // leftmost digit remains the same
         for (i = N-2; i >=0 ; i -= 1) begin : diff_loop
-            word[2*i +: 2] = mod4_subtract(word_in[2*i +: 2], word_in[2*(i+1) +: 2]);
+            word_tmp[2*i +: 2] = mod4_subtract(word_in[2*i +: 2], word_in[2*(i+1) +: 2]);
 		end
     end
 

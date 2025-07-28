@@ -1,5 +1,5 @@
 module top_module #(
-    parameter N = 10,  //  number of digits in the original word (will be set to 100)
+    parameter N = 100,  //  number of digits in the original word (will be set to 100)
 	parameter M = N-2-13, //  number of digits in the middle word (w/o redundancy bits)
 	parameter A = 30,  // constant "a" according the article
 	parameter B = ((5*(N-2)*(N-1)/2)-A)%(4*(N-2))	// constant "b" according the article
@@ -79,7 +79,6 @@ module top_module #(
 	);
 
 	assign word_reversed = reverse_needed ? reversed_word_out : word_1st_diff;
-	//assign word_rvrsd_check=
 			
 	remove_y #(.N(N-2),.M(M)) remove_y0 (
 		.clk(clk),

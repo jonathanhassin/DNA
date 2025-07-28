@@ -1,6 +1,6 @@
 module remove_y #(
-	parameter N = 128, // Number of digits in the word
-	parameter M = 112 // Number of digits in the final word
+	parameter N = 98, // Number of digits in the word
+	parameter M = N-13 // Number of digits in the final word
 )(
 	input clk,
 	input rst,
@@ -18,11 +18,7 @@ module remove_y #(
 	end
 		
 	always_comb begin
-		for (i=108;i<=2*N-27;i++) begin 
-			word[i]=word_in[i+22];
-			if (i==165) 
-				i=165;
-		end
+		word[169:108]=word_in[191:130];
 		word[107:18]=word_in[123:34];		
 		word[17:0]=word_in[27:10];
 	end

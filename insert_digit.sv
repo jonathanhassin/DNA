@@ -19,7 +19,6 @@ module insert_digit #(
 			word_out=0;
 		else 
 			word_out=word;
-
 	end
 
 	always_comb begin
@@ -40,7 +39,6 @@ module insert_digit #(
 			l+=2;
 		end
 		word[missing_index_rtl*2 +:2]=missing_digit;
-		
 	end
 	
 endmodule
