@@ -1,0 +1,1 @@
+Small Python/SV code base as part of a VLSI lab project We took part of in the Thechnion during our EE program. The algorithm was not designed by us, but based on the scientific paper "Efficient DNA Synthesis Codes with Error Correction and Runlengh Limited Constraints", by Tuan Thanj Nguyen, Kui Cai and Kees A. Schouhamer Immink.
